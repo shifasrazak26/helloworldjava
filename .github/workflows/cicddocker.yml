@@ -58,7 +58,7 @@ jobs:
         uses: appleboy/ssh-action@v1.2.2
         with:
           host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USERNAME }}
+          username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
 
           script: |
@@ -76,4 +76,4 @@ jobs:
             docker run -d \
               --name java-app \
               -p 8080:8080 \
-              ${{ secrets.DOCKER_USERNAME }}/java-app:latest
+              ${{ secrets.DOCKER_USER }}/java-app:latest
